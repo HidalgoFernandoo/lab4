@@ -14,7 +14,7 @@ class App(ctk.CTk):
         self.title("StockUp!")
         self.minsize(width=1300, height=700)
         self.frame_actual = None
-        self.frame_cambiar("login")                          
+        self.frame_cambiar("login")
 
     def frame_cambiar(self, frame_nombre):
         # Destruir el frame actual para poner el nuevo
