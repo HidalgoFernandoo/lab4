@@ -234,7 +234,6 @@ def crear_tabla(parent, columnas, encabezados, lotes, pady=20, menu = None, fram
                            )
     
     if menu == "productos":
-        menu_contextual.add_command(label="Agregar al carrito", command=lambda: MenuTablas().agregar_a_carrito(tree))
         menu_contextual.add_command(label="Editar Producto", command=lambda: MenuTablas(parent).editar_producto(tree, frame_origen))
         menu_contextual.add_command(label="Eliminar producto", command=lambda: MenuTablas().eliminar_producto(tree, frame_tabla))
     
@@ -284,19 +283,6 @@ class MenuTablas:
         self.db = Database()
         self.frame = frame
         
-
-    def agregar_a_carrito(self, tree):
-        item = tree.selection()[0]
-        valores = tree.item(item, "values")
-        # Código para agregar el producto al carrito, FALTA
-
-        CTkAlert(
-            state="info",
-            title="Agregar al producto",
-            body_text=f"Producto {valores[1]} agregado.",
-            btn1="Ok",
-        )
-
     def editar_producto(self, tree, frame_origen):
         item = tree.selection()[0]
         valores = tree.item(item, "values")  # obtiene los valores de la fila
